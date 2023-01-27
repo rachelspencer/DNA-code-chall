@@ -12,34 +12,33 @@
 // 5. Itertate through the whole string
 // 6. Join elelemts once iteration is complete.
 
-// const complementarySide = (sideOneDNA) => {
-//     let sideTwoDNA = sideOneDNA.split('')
+const complementarySide = (sideOneDNA) => {
+    let sideTwoDNA = sideOneDNA;
 
-//     for (let i = 0; i < sideTwoDNA.length; i++) {
-//         if (sideTwoDNA[i] === "A") {
-//             sideTwoDNA[i] = "T";
-//         } else if (sideTwoDNA[i] === "T") {
-//             sideTwoDNA[i] = "A";
-//         } else if (sideTwoDNA[i] === "G") {
-//             sideTwoDNA[i] = "C";
-//         } else if (sideTwoDNA[i] === "C") {
-//             sideTwoDNA[i] = "G";
-//         } else {
-//             return "Your string contains a non DNA symbol";
-//         }
-//     };
-//     return sideTwoDNA.join('');
-// };
+    for (let i = 0; i < sideTwoDNA.length; i++) {
+        if (sideOneDNA[i] === "A") {
+            sideTwoDNA[i] = "T";
+        } else if (sideOneDNA[i] === "T") {
+            sideTwoDNA[i] = "A";
+        } else if (sideOneDNA[i] === "G") {
+            sideTwoDNA[i] = "C";
+        } else if (sideOneDNA[i] === "C") {
+            sideTwoDNA[i] = "G";
+        } else {
+            return "Your string contains a non DNA symbol";
+        }
+    };
+    return sideTwoDNA;
+};
 
-const lookup = {
-    'A': 'T',
-    'T': 'A',
-    'G': 'C',
-    'C': 'G',
-}
-console.log(lookup['X'])
+// const lookup = {
+//     'A': 'T',
+//     'T': 'A',
+//     'G': 'C',
+//     'C': 'G',
+// }
 
-const complementarySide = dna => dna.split('').map(letter => lookup[letter] || letter).join('');
+// const complementarySide = dna => dna.split('').map(letter => lookup[letter] || letter).join('');
 
 const testDNA1 = complementarySide("AATT")
 const testDNA2 = complementarySide("ATAT")
@@ -55,28 +54,3 @@ console.log(testDNA4, "test4 should return CGCG")
 console.log(testDNA5, "test5 should return TGAC")
 console.log(testDNA6, "test6 should return CATG")
 console.log(testDNA7, "test7 should return error msg")
-
-// const complementarySide = (oneSideDNA) => {
-//     let complementarySide = oneSideDNA.split('').toString();
-//     console.log(complementarySide, "test1");
-
-//     let pattern = /a/gi;
-
-//     const otherSide = complementarySide.replace(pattern, function(match, offset, str) {
-//         if (match === "A") return "T";
-//         if (match === "T") return "A";
-//         if (match === "G") return "C";
-//         if (match === "C") return "G";
-//         return '';
-//     }) 
-  
-//     console.log(otherSide, "test3");
-// };
-
-// const testDNA = complementarySide("AATT")
-// console.log(testDNA, "test3")
-
-
-
-// const test = "A",ATT"
-
